@@ -1,0 +1,44 @@
+⭕️类
+public class Car {
+    // 定义类的属性
+    public String brand;
+    public String color;
+    public int year;
+
+    // 定义构造函数，用于创建Car对象时初始化属性
+    public Car(String brand, String color, int year) {
+        this.brand = brand;
+        this.color = color;
+        this.year = year;
+    }
+
+    // 定义类的方法
+    public void startEngine() {
+        System.out.println("Engine of the car " + this.brand + " started.");
+    }
+    
+    public void stopEngine() {
+        System.out.println("Engine of the car " + this.brand + " stopped.");
+    }
+
+    // 定义main方法，用于创建和操作Car对象
+    public static void main(String[] args) {
+        // 创建一个Car对象
+        Car myCar = new Car("Toyota", "Red", 2023);
+
+        // 调用Car对象的方法
+        myCar.startEngine();
+        myCar.stopEngine();
+    }
+}
+
+⭕️对象内存分配总结
+▶️对象一定需要一块对应的堆内存空间存储属性的值，而堆内存空间的开辟要通过关键字new来完成。
+▶️每一个对象在刚刚实例化之后，里面所有的属性的内容都是其对应数据类型的默认值
+▶️程序是通过引用从栈内存中找到堆内存存储的数据，所以说使用class定义的类型都是引用类型
+▶️对象在使用前必须首先进行实例化操作，要不然会抛NullPointerException
+
+举例：
+Car newCar = new Car（)
+//Car类型
+//newCar 对象，变量

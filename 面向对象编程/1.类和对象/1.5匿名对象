@@ -1,0 +1,22 @@
+在Java中，匿名对象是没有引用变量名的对象。它通常只使用一次，然后就被垃圾回收。
+
+例如，假设我们有一个Person类，这个类有一个sayHello方法：
+
+public class Person {
+    public void sayHello() {
+        System.out.println("Hello, world!");
+    }
+}
+
+在正常情况下，我们可以创建一个Person对象，并调用它的sayHello方法：
+
+Person person = new Person();
+person.sayHello();
+
+但如果我们只想调用一次sayHello方法，我们可以创建一个匿名对象：
+
+new Person().sayHello();
+
+在这个例子中，new Person()创建了一个新的Person对象，但没有给这个对象命名。我们直接在这个对象上调用sayHello方法。由于这个对象没有名字，我们无法再次使用它，所以它只使用一次。
+
+匿名对象可以在需要临时使用对象，而不需要再次引用该对象的情况下使用。它们常用于方法参数或者一次性方法调用。但请注意，由于匿名对象不能重复使用，所以如果你需要多次使用同一个对象，你应该创建一个有名字的对象。

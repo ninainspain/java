@@ -1,0 +1,26 @@
+封装性是指将数据（变量）和数据的操作（方法）结合在一起，形成一个独立的对象。这有助于隐藏对象内部的复杂性，并提供简单的接口供外部访问。
+
+封装性有以下主要的好处：
+
+提高了安全性：通过隐藏对象的内部状态，我们可以防止外部代码直接访问并修改对象的内部数据。
+
+提升了易用性：对象提供了清晰的接口供外部代码使用，外部代码无需理解对象内部的复杂实现就可以使用这个对象。
+
+增加了灵活性：内部实现可以自由改变，只要保持接口不变，外部代码就不需要修改。
+
+在Java中，封装性通常通过使用访问修饰符（如private，protected，public）和getter/setter方法来实现。例如：
+
+public class Person {
+    // 将属性设置为private，外部代码无法直接访问
+    private String name;
+
+    // 提供public的getter方法供外部代码获取属性值
+    public String getName() {
+        return name;
+    }
+
+    // 提供public的setter方法供外部代码设置属性值
+    public void setName(String name) {
+        this.name = name;
+    }
+}

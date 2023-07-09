@@ -1,0 +1,29 @@
+在Java中，你可以使用this关键字在一个构造方法中调用另一个构造方法。这种技术常常用于避免在多个构造方法中重复代码。
+
+例如，假设我们有一个Person类，它有两个属性：name和age，以及两个构造方法。第一个构造方法接受name和age两个参数，
+
+第二个构造方法只接受name参数，并且将age默认设置为0。我们可以使用this关键字在第二个构造方法中调用第一个构造方法，如下所示：
+
+public class Person {
+    private String name;
+    private int age;
+
+    // 第一个构造方法
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 第二个构造方法
+    public Person(String name) {
+        this(name, 0);  // 使用this关键字调用第一个构造方法
+    }
+}
+
+在这个例子中，当你创建一个新的Person对象并只提供name参数时，第二个构造方法将会调用第一个构造方法，将age参数设置为0：
+
+Person person = new Person("Alice");
+
+这样做的优点是你不需要在第二个构造方法中重复设置name和age的代码。
+
+请注意，使用this来调用其他构造方法的调用必须是构造函数体中的第一个语句。另外，构造方法之间的调用不能形成一个循环。例如，你不能让构造方法A调用构造方法B，然后又让构造方法B调用构造方法A，这将导致编译错误。

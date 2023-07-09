@@ -1,0 +1,23 @@
+在Java中，构造方法（或构造函数）是一种特殊的方法，用于初始化新创建的对象。它的名称必须与类名完全相同，并且它没有返回类型（甚至不是void）。
+
+构造方法可以接收参数，当创建对象时，你可以传入这些参数以初始化对象的状态。如果你没有定义构造方法，Java会为你提供一个默认的构造方法，这个默认的构造方法不接受任何参数，并且不执行任何操作。
+
+在对象实例化的时候，会调用类的构造方法
+
+构造方法的一个常见用途是接收参数并初始化对象的成员变量。
+
+public class Car {
+    private String brand;
+    private int year;
+
+    // 构造方法
+    public Car(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+}
+
+Car car = new Car("Toyota", 2023);
+
+在这个例子中，Car类有一个构造方法，这个方法接收brand和year两个参数，并将它们赋值给brand和year成员变量。当你创建一个Car对象时，你需要提供brand和year参数
+

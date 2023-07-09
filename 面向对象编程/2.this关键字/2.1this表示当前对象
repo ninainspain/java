@@ -1,0 +1,31 @@
+🌟在Java中，当我们创建类的对象并调用它的方法时，JVM为我们提供了一个隐式引用，我们可以用this关键字来访问它。
+
+这个隐式引用就是当前正在执行的对象。也就是说，this是一个指向当前对象的引用，🌟它允许我们访问调用该方法的对象的属性和方法（普通方法和构造方法）。
+
+举个例子，让我们考虑一个简单的Person类：
+
+public class Person {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void printName() {
+        System.out.println("Name is: " + this.name);
+    }
+}
+
+在这个例子中，当我们创建一个Person对象并调用它的setName和printName方法时，this关键字代表的就是我们创建的那个对象。
+
+Person person1 = new Person();
+person1.setName("Alice");
+person1.printName();  // 输出 "Name is: Alice"
+
+在这里，this在setName和printName方法中就代表person1对象。如果我们创建另一个Person对象并调用它的方法，那么this就会代表那个新的对象：
+
+Person person2 = new Person();
+person2.setName("Bob");
+person2.printName();  // 输出 "Name is: Bob"
+
+在这里，this在setName和printName方法中就代表person2对象。所以，我们可以说this表示当前对象，因为它总是引用调用方法的对象。
